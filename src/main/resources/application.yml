@@ -1,0 +1,22 @@
+server:
+  port: 8083
+
+spring.jpa:
+  database: POSTGRESQL
+  hibernate.ddl-auto: update
+  show-sql: true
+
+spring.datasource:
+  driverClassName: org.postgresql.Driver
+  url: jdbc:postgresql://45.155.124.28:5432/carget
+  username: postgres
+  password: 123
+
+
+spring:
+  sql:
+    init:
+      platform: postgres
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
