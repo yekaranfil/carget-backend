@@ -10,7 +10,7 @@ import lombok.*;
 @Builder
 public class RentalDTO {
 
-    private String locationId;
+    private String rentalId;
 
     private String vehicleIdFk;
 

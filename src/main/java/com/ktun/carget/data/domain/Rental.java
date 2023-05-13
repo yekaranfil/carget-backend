@@ -17,7 +17,7 @@ public class Rental {
     @Column(name = "rentalid")
     @GeneratedValue(generator = "system-uuid")
     @GenericGenerator(name = "system-uuid",strategy = "uuid")
-    private String locationId;
+    private String rentalId;
     @Column(name = "vehicleid_fk")
     private String vehicleIdFk;
     @Column(name = "userid_fk")

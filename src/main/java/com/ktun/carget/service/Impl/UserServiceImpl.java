@@ -4,8 +4,6 @@ import com.ktun.carget.data.domain.User;
 import com.ktun.carget.data.repo.UserRepository;
 import com.ktun.carget.dto.UserDTO;
 import com.ktun.carget.service.UserService;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
