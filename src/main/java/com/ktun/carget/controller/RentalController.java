@@ -12,13 +12,14 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import java.io.Serializable;
 import java.util.List;
 
 @Controller
 @RestController
 @RequestMapping("/rental")
 @RequiredArgsConstructor
-public class RentalController {
+public class RentalController implements Serializable {
 
     private final RentalService rentalService;
 

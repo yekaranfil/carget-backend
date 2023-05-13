@@ -12,13 +12,14 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import java.io.Serializable;
 import java.util.List;
 
 @Controller
 @RestController
 @RequestMapping("/location")
 @RequiredArgsConstructor
-public class LocationController {
+public class LocationController implements Serializable {
 
     private final LocationService locationService;
     private final LocationRepository locationRepository;

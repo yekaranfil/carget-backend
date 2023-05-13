@@ -10,13 +10,14 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import java.io.Serializable;
 import java.util.List;
 
 @Controller
 @RestController
 @RequestMapping("/vehicle")
 @RequiredArgsConstructor
-public class VehicleController {
+public class VehicleController  implements Serializable {
 
     private final VehicleService vehicleService;
 
