@@ -18,5 +18,8 @@ spring:
     init:
       platform: postgres
   mvc:
+    view:
+      prefix: webapp/view/
+      suffix: .jsp
     pathmatch:
       matching-strategy: ant_path_matcher
