@@ -1,6 +1,7 @@
 package com.ktun.carget.data.domain;
 
-import jakarta.persistence.*;
+import javax.persistence.*;
+import lombok.*;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.annotations.GenericGenerator;
