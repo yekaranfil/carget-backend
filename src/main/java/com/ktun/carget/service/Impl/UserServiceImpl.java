@@ -1,5 +1,6 @@
 package com.ktun.carget.service.Impl;
 
+import com.ktun.carget.data.domain.Rental;
 import com.ktun.carget.data.domain.User;
 import com.ktun.carget.data.repo.UserRepository;
 import com.ktun.carget.dto.UserDTO;
@@ -62,6 +63,11 @@ public class UserServiceImpl implements UserService {
             userDTOS.add(userDTO);
         });
         return userDTOS;
+    }
+
+    @Override
+    public List<User> findByLikeIgnoreCase(String userId, String firstName, String lastName, String phone, String email, String age, String driverlicence, String address) {
+        return userRepository.findByLikeIgnoreCase(userId,firstName,lastName,phone,email,age,driverlicence,address);
     }
 
 }

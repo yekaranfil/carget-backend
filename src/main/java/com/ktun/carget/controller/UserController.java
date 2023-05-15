@@ -1,6 +1,8 @@
 package com.ktun.carget.controller;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
+import com.ktun.carget.data.domain.Location;
+import com.ktun.carget.data.domain.User;
 import com.ktun.carget.data.repo.UserRepository;
 import com.ktun.carget.dto.UserDTO;
 import com.ktun.carget.service.UserService;
@@ -36,4 +38,19 @@ public class UserController implements Serializable {
     public ResponseEntity<List<UserDTO>> GetAll() {
         return ResponseEntity.ok(userService.getAll());
     }
+
+    @GetMapping("/findByLikeIgnoreCase")
+    @ResponseBody
+    public ResponseEntity<List<User>> findByLikeIgnoreCase(@RequestParam(required = false, defaultValue = "") String userId,
+                                                           @RequestParam(required = false,defaultValue = "") String firstName,
+                                                           @RequestParam(required = false,defaultValue = "") String lastName,
+                                                           @RequestParam(required = false,defaultValue = "") String phone,
+                                                           @RequestParam(required = false,defaultValue = "") String email,
+                                                           @RequestParam(required = false,defaultValue = "") String age,
+                                                           @RequestParam(required = false,defaultValue = "") String driverlicence,
+                                                           @RequestParam(required = false,defaultValue = "") String address)
+    {
+        return  ResponseEntity.ok(userService.findByLikeIgnoreCase(userId,firstName,lastName,phone,email,age,driverlicence,address));
+    }
+
 }
