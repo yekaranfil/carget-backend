@@ -14,9 +14,9 @@ import java.util.List;
 public interface RentalRepository extends JpaRepository<Rental, String> {
 
     @Query(nativeQuery = true, value = "SELECT * FROM rentals WHERE "+
-            "coalesce(rentalid,'') ilike %:rentalid% and " +
-            "coalesce(vehicleid_fk,'') ilike %:vehicleidfk% and " +
-            "coalesce(userid_fk,'') ilike %:useridfk%")
+            "coalesce(rentalid,'') ilike :rentalid or " +
+            "coalesce(vehicleid_fk,'') ilike :vehicleidfk or " +
+            "coalesce(userid_fk,'') ilike :useridfk")
     List<Rental> findByLikeIgnoreCase(
             @Param("rentalid") String rentalId,
             @Param("vehicleidfk") String vehicleIdFk,

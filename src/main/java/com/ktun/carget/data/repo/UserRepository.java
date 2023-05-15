@@ -9,18 +9,18 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-@Repository
+
 public interface UserRepository extends JpaRepository<User, String> {
 
     @Query(nativeQuery = true, value = "SELECT * FROM users WHERE "+
-            "coalesce(userid,'') ilike %:userid% and " +
-            "coalesce(firstname,'') ilike %:firstname% and " +
-            "coalesce(lastname,'') ilike %:lastname% and " +
-            "coalesce(phone,'') ilike %:phone% and " +
-            "coalesce(email,'') ilike %:email% and " +
-            "coalesce(age,'') ilike %:age% and " +
-            "coalesce(driver_licence,'') ilike %:driverlicence% and " +
-            "coalesce(address,'') ilike %:address%"
+            "coalesce(userid,'') ilike :userid or " +
+            "coalesce(firstname,'') ilike :firstname or " +
+            "coalesce(lastname,'') ilike :lastname or " +
+            "coalesce(phone,'') ilike :phone or " +
+            "coalesce(email,'') ilike :email or " +
+            "coalesce(age,'') ilike :age or " +
+            "coalesce(driver_licence,'') ilike :driverlicence or " +
+            "coalesce(address,'') ilike :address"
     )
     List<User> findByLikeIgnoreCase(
             @Param("userid") String userId,

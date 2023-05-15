@@ -11,8 +11,8 @@ import java.util.List;
 @Repository
 public interface LocationRepository extends JpaRepository<Location, String> {
     @Query(nativeQuery = true, value = "SELECT * FROM locations WHERE "+
-            "coalesce(locationid,'') ilike %:locationId% and " +
-            "coalesce(location_name,'') ilike %:locationName%")
+            "coalesce(locationid,'') ilike :locationId or " +
+            "coalesce(location_name,'') ilike :locationName")
     List<Location> findByLikeIgnoreCase(
             @Param("locationId") String locationId,
             @Param("locationName") String locationName);
