@@ -51,4 +51,9 @@ public class LocationServiceImpl implements LocationService {
         return locationDTOS;
     }
 
+    @Override
+    public List<Location> findByLikeIgnoreCase(String locationId, String locationName) {
+        return locationRepository.findByLikeIgnoreCase(locationId,locationName);
+    }
+
 }

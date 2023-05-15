@@ -59,4 +59,11 @@ public class RentalServiceImpl implements RentalService {
         return rentalDTOS;
     }
 
+    @Override
+    public List<Rental> findByLikeIgnoreCase(String rentalId, String vehicleIdFk, String userIdFk) {
+
+
+        return rentalRepository.findByLikeIgnoreCase(rentalId,vehicleIdFk,userIdFk);
+    }
+
 }

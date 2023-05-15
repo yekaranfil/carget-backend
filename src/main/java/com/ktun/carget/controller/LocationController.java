@@ -1,6 +1,7 @@
 package com.ktun.carget.controller;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
+import com.ktun.carget.data.domain.Location;
 import com.ktun.carget.data.repo.LocationRepository;
 import com.ktun.carget.data.repo.UserRepository;
 import com.ktun.carget.dto.LocationDTO;
@@ -40,5 +41,12 @@ public class LocationController implements Serializable {
     @GetMapping("/getAllLocation")
     public ResponseEntity<List<LocationDTO>> GetAll() {
         return ResponseEntity.ok(locationService.getAll());
+    }
+
+    @GetMapping("/findByLikeIgnoreCase")
+    @ResponseBody
+    public ResponseEntity<List<Location>> findByLikeIgnoreCase( @RequestParam(required = false, defaultValue = "") String locationId,
+                                                                @RequestParam(required = false,defaultValue = "") String locationName){
+        return  ResponseEntity.ok(locationService.findByLikeIgnoreCase(locationId , locationName));
     }
 }

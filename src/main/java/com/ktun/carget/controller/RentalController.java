@@ -1,6 +1,8 @@
 package com.ktun.carget.controller;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
+import com.ktun.carget.data.domain.Location;
+import com.ktun.carget.data.domain.Rental;
 import com.ktun.carget.data.repo.RentalRepository;
 import com.ktun.carget.dto.RentalDTO;
 import com.ktun.carget.dto.UserDTO;
@@ -39,5 +41,14 @@ public class RentalController implements Serializable {
     @GetMapping("/getAllRental")
     public ResponseEntity<List<RentalDTO>> GetAll() {
         return ResponseEntity.ok(rentalService.getAll());
+    }
+
+    @GetMapping("/findByLikeIgnoreCase")
+    @ResponseBody
+    public ResponseEntity<List<Rental>> findByLikeIgnoreCase(@RequestParam(required = false, defaultValue = "") String rentalId,
+                                                             @RequestParam(required = false,defaultValue = "") String vehicleIdFk,
+                                                             @RequestParam(required = false,defaultValue = "") String userIdFk
+    ){
+        return  ResponseEntity.ok(rentalService.findByLikeIgnoreCase(rentalId,vehicleIdFk,userIdFk));
     }
 }
