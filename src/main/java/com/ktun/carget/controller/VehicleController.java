@@ -1,6 +1,7 @@
 package com.ktun.carget.controller;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
+import com.ktun.carget.data.domain.Vehicle;
 import com.ktun.carget.dto.LocationDTO;
 import com.ktun.carget.dto.UserDTO;
 import com.ktun.carget.dto.VehicleDTO;
@@ -37,5 +38,23 @@ public class VehicleController  implements Serializable {
     @GetMapping("/getAllVehicle")
     public ResponseEntity<List<VehicleDTO>> GetAll() {
         return ResponseEntity.ok(vehicleService.getAll());
+    }
+
+
+    @GetMapping("/findByLikeIgnoreCase")
+    @ResponseBody
+    public ResponseEntity<List<Vehicle>> findByLikeIgnoreCase(@RequestParam(required = false, defaultValue = "") String vehicleId,
+                                                              @RequestParam(required = false,defaultValue = "") String vehicleClass,
+                                                              @RequestParam(required = false,defaultValue = "") String vehicleBrand,
+                                                              @RequestParam(required = false,defaultValue = "") String vehicleModel,
+                                                              @RequestParam(required = false,defaultValue = "") String vehicleLocationFk,
+                                                              @RequestParam(required = false,defaultValue = "") String capacity,
+                                                              @RequestParam(required = false,defaultValue = "") String maxdistance,
+                                                              @RequestParam(required = false,defaultValue = "") String vehicleColor,
+                                                              @RequestParam(required = false,defaultValue = "") String vehicleGearbox,
+                                                              @RequestParam(required = false,defaultValue = "") String vehiclePrice,
+                                                              @RequestParam(required = false,defaultValue = "") String vehicleFuel)
+    {
+        return  ResponseEntity.ok(vehicleService.findByLikeIgnoreCase(vehicleId,vehicleClass,vehicleBrand,vehicleModel,vehicleLocationFk,capacity,maxdistance,vehicleColor,vehicleGearbox,vehiclePrice,vehicleFuel));
     }
 }

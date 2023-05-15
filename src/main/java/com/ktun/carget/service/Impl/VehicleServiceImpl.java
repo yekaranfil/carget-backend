@@ -7,6 +7,7 @@ import com.ktun.carget.data.repo.VehicleRepository;
 import com.ktun.carget.dto.LocationDTO;
 import com.ktun.carget.dto.VehicleDTO;
 import com.ktun.carget.service.VehicleService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -15,6 +16,7 @@ import java.util.List;
 @Service
 public class VehicleServiceImpl implements  VehicleService {
 
+    @Autowired
     private final VehicleRepository vehicleRepository;
 
 
@@ -73,5 +75,11 @@ public class VehicleServiceImpl implements  VehicleService {
 
         });
         return vehicleDTOS;
+    }
+
+    @Override
+    public List<Vehicle> findByLikeIgnoreCase(String vehicleId, String vehicleClass, String vehicleBrand, String vehicleModel, String vehicleLocationFk, String capacity, String maxdistance, String vehicleColor, String vehicleGearbox, String vehiclePrice, String vehicleFuel) {
+        return vehicleRepository.findByLikeIgnoreCase(vehicleId,vehicleClass,vehicleBrand,vehicleModel,vehicleLocationFk,capacity,maxdistance,vehicleColor,vehicleGearbox,vehiclePrice,vehicleFuel);
+
     }
 }
