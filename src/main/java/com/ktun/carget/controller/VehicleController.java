@@ -57,4 +57,17 @@ public class VehicleController  implements Serializable {
     {
         return  ResponseEntity.ok(vehicleService.findByLikeIgnoreCase(vehicleId,vehicleClass,vehicleBrand,vehicleModel,vehicleLocationFk,capacity,maxdistance,vehicleColor,vehicleGearbox,vehiclePrice,vehicleFuel));
     }
+
+
+    @GetMapping("/vehiclesAvailable")
+    public ResponseEntity<List<Vehicle>> getAvailableVehicles(
+                                                             @RequestParam(value = "startDate", required = true) String startDate,
+                                                             @RequestParam(value = "endDate", required = true) String endDate,
+                                                             @RequestParam(value = "locationName", required = true) String locationName) {
+
+        return  ResponseEntity.ok(vehicleService.findAvailableVehicles(startDate,endDate,locationName));
+
+    }
 }
+
+

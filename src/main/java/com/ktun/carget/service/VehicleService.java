@@ -27,4 +27,8 @@ public interface VehicleService {
             String vehiclePrice,
             String vehicleFuel
     );
+
+    List<Vehicle> findAvailableVehicles(String startDate,
+                                        String endDate,
+                                        String locationName);
 }

@@ -10,6 +10,8 @@ import com.ktun.carget.service.VehicleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.ZonedDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -81,5 +83,13 @@ public class VehicleServiceImpl implements  VehicleService {
     public List<Vehicle> findByLikeIgnoreCase(String vehicleId, String vehicleClass, String vehicleBrand, String vehicleModel, String vehicleLocationFk, String capacity, String maxdistance, String vehicleColor, String vehicleGearbox, String vehiclePrice, String vehicleFuel) {
         return vehicleRepository.findByLikeIgnoreCase(vehicleId,vehicleClass,vehicleBrand,vehicleModel,vehicleLocationFk,capacity,maxdistance,vehicleColor,vehicleGearbox,vehiclePrice,vehicleFuel);
 
+    }
+
+    @Override
+    public List<Vehicle> findAvailableVehicles(String startDate, String endDate, String locationName) {
+
+        ZonedDateTime startDate1 = ZonedDateTime.parse(startDate, DateTimeFormatter.ISO_DATE_TIME);
+        ZonedDateTime endDate1 = ZonedDateTime.parse(endDate, DateTimeFormatter.ISO_DATE_TIME);
+        return vehicleRepository.findAvailableVehicles(startDate1, endDate1, locationName);
     }
 }
