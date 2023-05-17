@@ -63,6 +63,7 @@ public class UserServiceImpl implements UserService {
             userDTO.setDriverLicence(it.getDriverLicence());
             userDTO.setUserPassword(it.getUserPassword());
             userDTO.setBirthday(it.getBirthday());
+            userDTO.setUserImage(it.getUserImage());
             userDTO.setCreatedAt(it.getCreatedAt());
             userDTO.setUpdatedAt(it.getUpdatedAt());
             userDTOS.add(userDTO);
