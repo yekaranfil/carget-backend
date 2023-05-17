@@ -7,6 +7,7 @@ import com.ktun.carget.dto.UserDTO;
 import com.ktun.carget.service.UserService;
 import org.springframework.stereotype.Service;
 
+import java.sql.DataTruncation;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -32,6 +33,8 @@ public class UserServiceImpl implements UserService {
         user.setDriverLicence(userDTO.getDriverLicence());
         user.setUserImage(userDTO.getUserImage());
         user.setUserAddress(userDTO.getUserAddress());
+        user.setUserPassword(userDTO.getUserPassword());
+        user.setBirthday(userDTO.getBirthday());
         user.setCreatedAt(userDTO.getCreatedAt());
         user.setUpdatedAt(userDTO.getUpdatedAt());
 
@@ -56,10 +59,12 @@ public class UserServiceImpl implements UserService {
             userDTO.setUserPhone(it.getUserPhone());
             userDTO.setUserAge(it.getUserAge());
             userDTO.setUserEmail(it.getUserEmail());
-            userDTO.setUserAddress(userDTO.getUserAddress());
-            userDTO.setDriverLicence(userDTO.getDriverLicence());
-            userDTO.setCreatedAt(userDTO.getCreatedAt());
-            userDTO.setUpdatedAt(userDTO.getUpdatedAt());
+            userDTO.setUserAddress(it.getUserAddress());
+            userDTO.setDriverLicence(it.getDriverLicence());
+            userDTO.setUserPassword(it.getUserPassword());
+            userDTO.setBirthday(it.getBirthday());
+            userDTO.setCreatedAt(it.getCreatedAt());
+            userDTO.setUpdatedAt(it.getUpdatedAt());
             userDTOS.add(userDTO);
         });
         return userDTOS;

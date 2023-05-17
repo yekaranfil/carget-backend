@@ -43,6 +43,8 @@ public class Rental {
     private Boolean transfer;
     @Column(name = "credit_card")
     private Boolean creditCard;
+    @Column(name = "location_id_fk")
+    private String locationIdFk;
     @Column(name = "created_at")
     private OffsetDateTime createdAt;
     @Column(name = "updated_at")

@@ -35,7 +35,9 @@ public class RentalServiceImpl implements RentalService {
         rental.setEcoInsurance(rentalDTO.getEcoInsurance());
         rental.setDetailingInsurance(rentalDTO.getDetailingInsurance());
         rental.setCash(rentalDTO.getCash());
+        rental.setCreditCard(rentalDTO.getCreditCard());
         rental.setTransfer(rentalDTO.getTransfer());
+        rental.setLocationIdFk(rentalDTO.getLocationIdFk());
         rental.setCreatedAt(rentalDTO.getCreatedAt());
         rental.setUpdatedAt(rentalDTO.getUpdatedAt());
 
@@ -66,10 +68,10 @@ public class RentalServiceImpl implements RentalService {
             rentalDTO.setCash(it.getCash());
             rentalDTO.setTransfer(it.getTransfer());
             rentalDTO.setCreditCard(it.getCreditCard());
+            rentalDTO.setLocationIdFk(it.getLocationIdFk());
             rentalDTO.setCreatedAt(it.getCreatedAt());
             rentalDTO.setUpdatedAt(it.getUpdatedAt());
             rentalDTOS.add(rentalDTO);
-
         });
         return rentalDTOS;
     }

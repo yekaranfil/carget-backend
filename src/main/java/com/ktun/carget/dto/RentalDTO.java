@@ -26,6 +26,7 @@ public class RentalDTO {
     private Boolean cash;
     private Boolean transfer;
     private Boolean creditCard;
+    private String locationIdFk;
     private OffsetDateTime createdAt = OffsetDateTime.now();
     private OffsetDateTime updatedAt = OffsetDateTime.now();
 

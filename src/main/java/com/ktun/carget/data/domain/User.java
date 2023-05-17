@@ -35,6 +35,10 @@ public class User {
     private String userImage;
     @Column(name = "address")
     private String userAddress;
+    @Column(name = "password")
+    private String userPassword;
+    @Column(name = "birthday")
+    private OffsetDateTime birthday;
     @Column(name = "created_at")
     private OffsetDateTime createdAt;
     @Column(name = "updated_at")

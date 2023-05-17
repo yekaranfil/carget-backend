@@ -2,6 +2,9 @@ package com.ktun.carget.dto;
 
 import java.time.OffsetDateTime;
 import lombok.*;
+
+import javax.persistence.Column;
+
 @Data
 @Setter
 @Getter
@@ -27,6 +30,10 @@ public class UserDTO {
     private String userImage;
 
     private String userAddress;
+
+    private String userPassword;
+
+    private OffsetDateTime birthday;
 
     private OffsetDateTime createdAt =  OffsetDateTime.now();
 
