@@ -27,6 +27,22 @@ public class Rental {
     private OffsetDateTime rentalStartDate;
     @Column(name = "rental_end_date")
     private OffsetDateTime rentalEndDate;
+    @Column(name = "navigation")
+    private Boolean navigation;
+    @Column(name = "driver_service")
+    private Boolean driverService;
+    @Column(name = "baby_seat")
+    private Boolean babySeat;
+    @Column(name = "eco_insurance")
+    private Boolean ecoInsurance;
+    @Column(name = "detailing_insurance")
+    private Boolean detailingInsurance;
+    @Column(name = "cash")
+    private Boolean cash;
+    @Column(name = "transfer")
+    private Boolean transfer;
+    @Column(name = "credit_card")
+    private Boolean creditCard;
     @Column(name = "created_at")
     private OffsetDateTime createdAt;
     @Column(name = "updated_at")

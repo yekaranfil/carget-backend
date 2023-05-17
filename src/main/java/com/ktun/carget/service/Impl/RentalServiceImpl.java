@@ -29,6 +29,13 @@ public class RentalServiceImpl implements RentalService {
         rental.setVehicleIdFk(rentalDTO.getVehicleIdFk());
         rental.setRentalStartDate(rentalDTO.getRentalStartDate());
         rental.setRentalEndDate(rentalDTO.getRentalEndDate());
+        rental.setNavigation(rentalDTO.getNavigation());
+        rental.setDriverService(rentalDTO.getDriverService());
+        rental.setBabySeat(rentalDTO.getBabySeat());
+        rental.setEcoInsurance(rentalDTO.getEcoInsurance());
+        rental.setDetailingInsurance(rentalDTO.getDetailingInsurance());
+        rental.setCash(rentalDTO.getCash());
+        rental.setTransfer(rentalDTO.getTransfer());
         rental.setCreatedAt(rentalDTO.getCreatedAt());
         rental.setUpdatedAt(rentalDTO.getUpdatedAt());
 
@@ -51,6 +58,14 @@ public class RentalServiceImpl implements RentalService {
             rentalDTO.setVehicleIdFk(it.getVehicleIdFk());
             rentalDTO.setRentalStartDate(it.getRentalStartDate());
             rentalDTO.setRentalEndDate(it.getRentalEndDate());
+            rentalDTO.setNavigation(it.getNavigation());
+            rentalDTO.setDriverService(it.getDriverService());
+            rentalDTO.setBabySeat(it.getBabySeat());
+            rentalDTO.setEcoInsurance(it.getEcoInsurance());
+            rentalDTO.setDetailingInsurance(it.getDetailingInsurance());
+            rentalDTO.setCash(it.getCash());
+            rentalDTO.setTransfer(it.getTransfer());
+            rentalDTO.setCreditCard(it.getCreditCard());
             rentalDTO.setCreatedAt(it.getCreatedAt());
             rentalDTO.setUpdatedAt(it.getUpdatedAt());
             rentalDTOS.add(rentalDTO);
