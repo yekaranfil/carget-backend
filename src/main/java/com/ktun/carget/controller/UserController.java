@@ -48,9 +48,10 @@ public class UserController implements Serializable {
                                                            @RequestParam(required = false,defaultValue = "") String email,
                                                            @RequestParam(required = false,defaultValue = "") String age,
                                                            @RequestParam(required = false,defaultValue = "") String driverlicence,
-                                                           @RequestParam(required = false,defaultValue = "") String address)
+                                                           @RequestParam(required = false,defaultValue = "") String address,
+                                                           @RequestParam(required = false,defaultValue = "") String userRole )
     {
-        return  ResponseEntity.ok(userService.findByLikeIgnoreCase(userId,firstName,lastName,phone,email,age,driverlicence,address));
+        return  ResponseEntity.ok(userService.findByLikeIgnoreCase(userId,firstName,lastName,phone,email,age,driverlicence,address,userRole));
     }
 
 }

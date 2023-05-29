@@ -20,7 +20,8 @@ public interface UserRepository extends JpaRepository<User, String> {
             "coalesce(email,'') ilike :email or " +
             "coalesce(age,'') ilike :age or " +
             "coalesce(driver_licence,'') ilike :driverlicence or " +
-            "coalesce(address,'') ilike :address"
+            "coalesce(address,'') ilike :address or " +
+            "coalesce(user_role,'') ilike :userrole"
     )
     List<User> findByLikeIgnoreCase(
             @Param("userid") String userId,
@@ -30,6 +31,7 @@ public interface UserRepository extends JpaRepository<User, String> {
             @Param("email") String email,
             @Param("age") String age,
             @Param("driverlicence") String driverlicence,
-            @Param("address") String address
+            @Param("address") String address,
+            @Param("userrole") String userRole
     );
 }

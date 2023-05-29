@@ -37,6 +37,7 @@ public class UserServiceImpl implements UserService {
         user.setBirthday(userDTO.getBirthday());
         user.setCreatedAt(userDTO.getCreatedAt());
         user.setUpdatedAt(userDTO.getUpdatedAt());
+        user.setUserRole(userDTO.getUserRole());
 
         final User userDB = userRepository.save(user);
 
@@ -66,14 +67,15 @@ public class UserServiceImpl implements UserService {
             userDTO.setUserImage(it.getUserImage());
             userDTO.setCreatedAt(it.getCreatedAt());
             userDTO.setUpdatedAt(it.getUpdatedAt());
+            userDTO.setUserRole(it.getUserRole());
             userDTOS.add(userDTO);
         });
         return userDTOS;
     }
 
     @Override
-    public List<User> findByLikeIgnoreCase(String userId, String firstName, String lastName, String phone, String email, String age, String driverlicence, String address) {
-        return userRepository.findByLikeIgnoreCase(userId,firstName,lastName,phone,email,age,driverlicence,address);
+    public List<User> findByLikeIgnoreCase(String userId, String firstName, String lastName, String phone, String email, String age, String driverlicence, String address, String userRole) {
+        return userRepository.findByLikeIgnoreCase(userId,firstName,lastName,phone,email,age,driverlicence,address,userRole);
     }
 
 }

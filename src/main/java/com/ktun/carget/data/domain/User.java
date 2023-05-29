@@ -39,6 +39,8 @@ public class User {
     private String userPassword;
     @Column(name = "birthday")
     private OffsetDateTime birthday;
+    @Column(name = "user_role")
+    private String userRole;
     @Column(name = "created_at")
     private OffsetDateTime createdAt;
     @Column(name = "updated_at")

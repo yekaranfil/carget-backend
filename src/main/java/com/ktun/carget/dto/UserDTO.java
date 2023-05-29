@@ -35,6 +35,8 @@ public class UserDTO {
 
     private OffsetDateTime birthday;
 
+    private String userRole;
+
     private OffsetDateTime createdAt =  OffsetDateTime.now();
 
     private OffsetDateTime updatedAt = OffsetDateTime.now();
