@@ -8,8 +8,8 @@ spring.jpa:
 
 spring.datasource:
   driverClassName: org.postgresql.Driver
-  url: jdbc:postgresql://45.155.124.28:5432/carget
-  username: postgres
+  url: jdbc:postgresql://localhost:5432/carget
+  username: pst
   password: 123
 
 
